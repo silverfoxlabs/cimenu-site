@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIMenu Support</title>
+  <meta name="description" content="Support and help for CIMenu, a native macOS menu bar app for Xcode Cloud build monitoring.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="badge">● Currently in beta</span>
+      <h1>CIMenu Support</h1>
+      <p class="tagline">The fastest path from build failure to error — without opening Xcode.</p>
+    </header>
+
+    <p>
+      CIMenu is a native macOS menu bar app that monitors Xcode Cloud builds via the
+      App Store Connect API. It surfaces build status, history, and on-device AI
+      failure analysis from your menu bar, so you don't have to navigate Xcode or
+      App Store Connect's web UI to find out what broke.
+    </p>
+
+    <h2>Get help</h2>
+    <div class="card">
+      <p style="margin-bottom:6px;">Running into a bug, have feedback, or a question about the beta?</p>
+      <p style="margin:0;"><a href="mailto:silverfoxlabs1@gmail.com">silverfoxlabs1@gmail.com</a></p>
+    </div>
+
+    <h2>FAQ</h2>
+    <dl class="faq">
+      <dt>Does CIMenu require Xcode Cloud?</dt>
+      <dd>Yes. CIMenu connects to the App Store Connect API and currently supports Xcode Cloud only.</dd>
+
+      <dt>What do I need to connect my account?</dt>
+      <dd>An App Store Connect API key (Issuer ID, Key ID, and a <code>.p8</code> private key) for at least one Xcode Cloud project. You can generate one in App Store Connect under Users and Access → Integrations.</dd>
+
+      <dt>What data does CIMenu access, and where does it go?</dt>
+      <dd>See the <a href="privacy.html">Privacy Policy</a> for the full breakdown — in short, your API key stays in the macOS Keychain and never leaves your Mac.</dd>
+
+      <dt>What are the system requirements?</dt>
+      <dd>macOS 26 (Tahoe) or later, on Apple Silicon.</dd>
+
+      <dt>I don't have an Xcode Cloud project — can I still try CIMenu?</dt>
+      <dd>Yes — enable Demo Mode from Settings → General → Developer, then quit and relaunch the app. It populates CIMenu with scripted sample build data instead of a real account.</dd>
+    </dl>
+
+    <footer>
+      CIMenu is developed by Silver Fox Labs.
+    </footer>
+  </div>
+</body>
+</html>

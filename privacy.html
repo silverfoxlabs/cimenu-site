@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CIMenu Privacy Policy</title>
+  <meta name="description" content="Privacy policy for CIMenu, a native macOS menu bar app for Xcode Cloud build monitoring.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <a class="nav-back" href="index.html">← Support</a>
+    <header class="hero">
+      <h1>Privacy Policy</h1>
+      <p class="tagline">Last updated August 20, 2026</p>
+    </header>
+
+    <p>
+      CIMenu is a local-only macOS app. It talks to two external services — Apple's
+      App Store Connect API, and, only if you turn it on, a third-party AI provider
+      for optional AI-powered failure analysis — and nothing else. There is no
+      analytics SDK, no crash reporter, and no telemetry of any kind in CIMenu.
+    </p>
+
+    <h2>Credentials</h2>
+    <p>
+      Your App Store Connect API key (Issuer ID, Key ID, and private key) is stored
+      only in the macOS Keychain on your Mac, protected so it's readable only after
+      your Mac has been unlocked at least once since restart. It is never synced to
+      iCloud, never written to a log file, and never transmitted anywhere except
+      directly to Apple's App Store Connect API to authenticate your requests.
+    </p>
+    <p>
+      If you optionally configure a third-party AI provider (BYOK — "bring your own
+      key"), that provider's API key is stored the same way, in the Keychain, kept
+      separate from your App Store Connect credentials.
+    </p>
+
+    <h2>Build data</h2>
+    <p>
+      Xcode Cloud build logs are fetched from App Store Connect only when you open a
+      failed build or ask a question about a build, and are not saved to disk beyond
+      cached build metadata (status, branch, commit — not log text).
+    </p>
+
+    <h2>AI analysis</h2>
+    <p>CIMenu's failure analysis runs in layers, and only the last one ever leaves your Mac:</p>
+    <ul>
+      <li><strong>Log parsing</strong> — pattern matching that runs entirely on-device. Nothing is transmitted.</li>
+      <li><strong>On-device AI summary</strong> — uses Apple's on-device Foundation Models framework, when available on your Mac. Your build log never leaves your device for this step.</li>
+      <li><strong>Optional third-party AI (BYOK)</strong> — off by default, and only used if you explicitly enable it and configure your own API key. Even then, only a structured summary of the failure (error type, file, line) is sent — never your raw build log — unless you separately opt in to sharing a log excerpt for follow-up questions.</li>
+    </ul>
+
+    <h2>Network access</h2>
+    <p>
+      CIMenu's outbound network access is limited to Apple's App Store Connect API,
+      and, only if you've enabled it, your configured AI provider's endpoint. CIMenu
+      runs inside Apple's App Sandbox.
+    </p>
+
+    <h2>What we don't do</h2>
+    <ul>
+      <li>No analytics, telemetry, or crash-reporting SDK</li>
+      <li>No advertising or tracking</li>
+      <li>No selling or sharing your data with third parties</li>
+      <li>No account required to use CIMenu beyond your own App Store Connect credentials</li>
+    </ul>
+
+    <h2>Questions</h2>
+    <p>
+      Contact <a href="mailto:silverfoxlabs1@gmail.com">silverfoxlabs1@gmail.com</a>
+      with any privacy questions.
+    </p>
+
+    <footer>
+      CIMenu is developed by Silver Fox Labs.
+    </footer>
+  </div>
+</body>
+</html>
